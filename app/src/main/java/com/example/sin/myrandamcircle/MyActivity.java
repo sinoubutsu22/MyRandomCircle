@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Toast;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -59,6 +60,7 @@ class MyCountDownTimer extends CountDownTimer{
 
     @Override
     public  void onFinish(){
+        millisUntilFinished = 0;
 
     }
     @Override
@@ -132,8 +134,8 @@ class MyCircleView extends View{
             int ex =(int)event.getX();
             int ey =(int)event.getY();
 
-            if((dx-ex)*(dx-ex)+(dy-ey)*(dy-ey)<=100*100){
-                score++;
+            if((dx-ex)*(dx-ex)+(dy-ey)*(dy-ey)<100*100){
+                score = score +1;
             }
 
 
